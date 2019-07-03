@@ -165,23 +165,20 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h2 id="模型概念"><a href="#模型概念" class="headerlink" title="模型概念"></a>模型概念</h2><ol>
-<li><strong>AR</strong>（自回归模型）<ul>
-<li>特点：描述当前值与历史值之间的关系</li>
-<li>功能：用变量自身的历史时间数据对自身进行预测</li>
-<li>参数：<strong>p</strong>（时序数据本身的滞后数）</li>
-</ul>
+<li><p><strong>AR</strong>（自回归模型）</p>
+<p>特点：描述当前值与历史值之间的关系</p>
+<p>功能：用变量自身的历史时间数据对自身进行预测</p>
+<p>参数：<strong>p</strong>（时序数据本身的滞后数）</p>
 </li>
-<li><strong>I</strong> (差分)<ul>
-<li>特点：使用拆分法计算时间序列差值</li>
-<li>功能：使数据更平稳以满足模型对平稳性的要求</li>
-<li>参数：<strong>d</strong>（差分阶数）</li>
-</ul>
+<li><p><strong>I</strong> (差分)</p>
+<p>特点：使用拆分法计算时间序列差值</p>
+<p>功能：使数据更平稳以满足模型对平稳性的要求</p>
+<p>参数：<strong>d</strong>（差分阶数）</p>
 </li>
-<li><strong>MA</strong>  (移动平均模型)<ul>
-<li>特点： 关注AR模型中误差项的累加</li>
-<li>功能：有效消除预测中的随机波动</li>
-<li>参数：<strong>q</strong>（预测误差的滞后数）</li>
-</ul>
+<li><p><strong>MA</strong>  (移动平均模型)</p>
+<p>特点： 关注AR模型中误差项的累加</p>
+<p>功能：有效消除预测中的随机波动</p>
+<p>参数：<strong>q</strong>（预测误差的滞后数）</p>
 </li>
 </ol>
 <h2 id="建模重点"><a href="#建模重点" class="headerlink" title="建模重点"></a>建模重点</h2><ol>
