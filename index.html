@@ -164,29 +164,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="模型概念"><a href="#模型概念" class="headerlink" title="模型概念"></a>模型概念</h2><ol>
-<li><p><strong>AR</strong>（自回归模型）</p>
-<p>特点：描述当前值与历史值之间的关系</p>
-<p>功能：用变量自身的历史时间数据对自身进行预测</p>
-<p>参数：<strong>p</strong>（时序数据本身的滞后数）</p>
-</li>
-<li><p><strong>I</strong> (差分)</p>
-<p>特点：使用拆分法计算时间序列差值</p>
-<p>功能：使数据更平稳以满足模型对平稳性的要求</p>
-<p>参数：<strong>d</strong>（差分阶数）</p>
-</li>
-<li><p><strong>MA</strong>  (移动平均模型)</p>
-<p>特点： 关注AR模型中误差项的累加</p>
-<p>功能：有效消除预测中的随机波动</p>
-<p>参数：<strong>q</strong>（预测误差的滞后数）</p>
-</li>
-</ol>
-<h2 id="建模重点"><a href="#建模重点" class="headerlink" title="建模重点"></a>建模重点</h2><ol>
-<li><p>利用差分得到平稳数据（参数<strong>d</strong>的确定）</p>
-<p>观察比较差分图的稳定性，选择平稳性最强的图的阶数作为参数<strong>d</strong>。</p>
-</li>
-<li><p>参数<strong>p, q</strong>的确定</p>
-<p>参照下表</p>
+        <h2 id="模型概念"><a href="#模型概念" class="headerlink" title="模型概念"></a>模型概念</h2><h3 id="1-AR（自回归模型）"><a href="#1-AR（自回归模型）" class="headerlink" title="1. AR（自回归模型）"></a>1. AR（自回归模型）</h3><ul>
+<li>特点：描述当前值与历史值之间的关系</li>
+<li>功能：用变量自身的历史时间数据对自身进行预测</li>
+<li>参数：<strong>p</strong>（时序数据本身的滞后数）</li>
+</ul>
+<h3 id="2-I-差分"><a href="#2-I-差分" class="headerlink" title="2. I (差分)"></a>2. I (差分)</h3><ul>
+<li>特点：使用拆分法计算时间序列差值</li>
+<li>功能：使数据更平稳以满足模型对平稳性的要求</li>
+<li>参数：<strong>d</strong>（差分阶数）</li>
+</ul>
+<h3 id="3-MA-移动平均模型"><a href="#3-MA-移动平均模型" class="headerlink" title="3. MA  (移动平均模型)"></a>3. MA  (移动平均模型)</h3><ul>
+<li>特点： 关注AR模型中误差项的累加</li>
+<li>功能：有效消除预测中的随机波动</li>
+<li>参数：<strong>q</strong>（预测误差的滞后数）</li>
+</ul>
+<h2 id="建模重点"><a href="#建模重点" class="headerlink" title="建模重点"></a>建模重点</h2><h3 id="1-利用差分得到平稳数据（参数d的确定）"><a href="#1-利用差分得到平稳数据（参数d的确定）" class="headerlink" title="1.利用差分得到平稳数据（参数d的确定）"></a>1.利用差分得到平稳数据（参数<strong>d</strong>的确定）</h3><p>观察比较差分图的稳定性，选择平稳性最强的图的阶数作为参数<strong>d</strong>。</p>
+<h3 id="2-参数p-q的确定"><a href="#2-参数p-q的确定" class="headerlink" title="2.参数p, q的确定"></a>2.参数<strong>p, q</strong>的确定</h3><p>参照下表</p>
 <table>
 <thead>
 <tr>
@@ -210,8 +204,6 @@
 <li>拖尾：序列衰减趋于0</li>
 <li>截尾：序列从某个时点变得非常小，之后几乎95%的(偏)自相关系数都落在2倍标准差范围以内</li>
 </ul>
-</li>
-</ol>
 <h2 id="建模步骤"><a href="#建模步骤" class="headerlink" title="建模步骤"></a>建模步骤</h2><ol>
 <li>对数据绘图，观测是否为平稳时间序列，对于非平稳时间序列要先进行d阶差分运算，化为平稳时间序列，确定参数<strong>d</strong>。</li>
 <li>要对平稳时间序列分别求得其自相关系数ACF 和偏自相关系数PACF，通过对自相关图和偏自相关图的分析，确定参数<strong>p, q</strong>。</li>
