@@ -346,44 +346,35 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href = "/2019/06/30/hexo博客搭建遇到的问题和解决方案（持续更新）/" >
+        <a class="abstract-title" href = "/2019/11/14/安卓开发时遇到的问题和解决方案/" >
             
-                <span>hexo博客搭建遇到的问题和解决方案（持续更新）</span>
+                <span>安卓开发时遇到的问题和解决方案</span>
         </a>
         <div class="abstract-content">
             
-首次 hexo d 报错显示failed to push
-设置git的global（按提示填写用户名和邮箱）后解决
+java.net.SocketException: socket failed: EPERM (Operation not permitted)
+问题：添加了uses-permission android:name=“android.permission.INTERNET”权限后依旧无法使用网络，显示错误如标题所示
+解决方案：将程序卸载后重新安装解决（有点神奇。。
 
 
 
-博客作者名设置中文出现乱码
-将博客根目录的_config文件另存为UTF-8编码的文件
-
-
-
-
-头像等图片文件显示错误
-注意配置文件时JPG和jpg后缀是不同的
-
-
-
-没有about页面
- 输入hexo new page “about”指令生成about页
-
-
-
+json数据解析
+问题：api发来的json数据看得不清楚，导致无法正确解析
+解决方案： 发现一个不错的网站 https://www.bejson.com/jsonviewernew/
+  把需要解析的json数据复制...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/06/30</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/11/14</span>
             </div>
             <!-- tags  -->
             
             <div class= abstract-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "hexo">hexo</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "Android">Android</a>
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags = "json">json</a>
     
 </div>
             
