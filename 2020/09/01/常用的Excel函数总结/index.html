@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -419,8 +419,8 @@ height:50vh;
 <h3 id="DATEDIF函数"><a href="#DATEDIF函数" class="headerlink" title="DATEDIF函数　　"></a>DATEDIF函数　　</h3><p>主要功能：计算返回两个日期参数的差值。　　</p>
 <p>使用格式：=DATEDIF(date1,date2,”y”)、=DATEDIF(date1,date2,”m”)、=DATEDIF(date1,date2,”d”)　　</p>
 <p>参数说明：date1代表前面一个日期，date2代表后面一个日期；y（m、d）要求返回两个日期相差的年（月、天）数。　　</p>
-<p>应用举例：在C1单元格中输入公式：=DATEDIF(A1,TODAY(),”y”)，确认后返回系统当前日期[用TODAY()表示）与A1单元格中日期的差值，并返回相差的年数,如A1单元格输入 2016/3/1，那C1单元格则显示为1 ，记得today是写作这天。　　</p>
-<p>特别提醒：这是Excel中的一个隐藏函数，在函数向导中是找不到的，可以直接输入使用，对于计算年龄、工龄、生日提醒非常效，很适合HR，行政的同学们使用哈。　</p>
+<p>应用举例：在C1单元格中输入公式：=DATEDIF(A1,TODAY(),”y”)，确认后返回系统当前日期[用TODAY()表示）与A1单元格中日期的差值，并返回相差的年数,如A1单元格输入 2020/8/31，那C1单元格则显示为1 ，记得today是写作这天。　　</p>
+<p>特别提醒：这是Excel中的一个隐藏函数，在函数向导中是找不到的，可以直接输入使用，对于计算年龄、工龄、生日提醒非常有效。　</p>
 <h3 id="IF函数"><a href="#IF函数" class="headerlink" title="IF函数　　"></a>IF函数　　</h3><p>主要功能：根据对指定条件的逻辑判断的真假结果，返回相对应的内容。　　</p>
 <p>使用格式：=IF(Logical,Value_if_true,Value_if_false)　　</p>
 <p>参数说明：Logical代表逻辑判断表达式；Value_if_true表示当判断条件为逻辑“真（TRUE）”时的显示内容，如果忽略返回“TRUE”；Value_if_false表示当判断条件为逻辑“假（FALSE）”时的显示内容，如果忽略返回“FALSE”。　　</p>
@@ -449,7 +449,7 @@ height:50vh;
 <p>使用格式：VLOOKUP(lookup_value,table_array,col_index_num,range_lookup)　　</p>
 <p>参数说明：Lookup_value代表需要查找的数值；Table_array代表需要在其中查找数据的单元格区域；Col_index_num为在table_array区域中待返回的匹配值的列序号（当Col_index_num为2时,返回table_array第2列中的数值，为3时，返回第3列的值……）；Range_lookup为一逻辑值，如果为TRUE或省略，则返回近似匹配值，也就是说，如果找不到精确匹配值，则返回小于lookup_value的最大数值；如果为FALSE，则返回精确匹配值，如果找不到，则返回错误值#N/A。　　</p>
 <p>应用举例：表格中，A列，B列分别是学生姓名，手机号码；F列，G列分别是学生姓名，高考总分，现需要给高考成绩最好的几位同学电话沟通；那我们可以在C1单元格中输入公式：=VLOOKUP(A1,F:G,2,FALSE)，回车确认后，向下拖动公式进行填充，就可以在C列看到每位同学的高考成绩了，选出需要沟通的同学即可电话联系。　　</p>
-<p>特别提醒：Lookup_value参见必须在Table_array区域的首列中；如果忽略Range_lookup参数，则Table_array的首列必须进行排序；另外，还有HLOOKUP，请自行学习，这样，按列按行查找匹配都OK了。</p>
+<p>特别提醒：Lookup_value参见必须在Table_array区域的首列中；如果忽略Range_lookup参数，则Table_array的首列必须进行排序。</p>
 
     </article>
     <!-- license  -->
@@ -458,7 +458,7 @@ height:50vh;
             <p>原文作者：<a href="https://qianyin-lee.github.io">千阴</a>
             <p>原文链接：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/</a>
             <p>发表日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:08:08 pm</a>
-            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:38:33 pm</a>
+            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 2nd 2020, 12:26:31 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -693,6 +693,8 @@ top:50vh;
     
     
     
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
         Total : 7
@@ -762,9 +764,9 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="机器学习"><span class="iconfont-archer">&#xe606;</span>机器学习</span>
     
-        <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
-    
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
     
         <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
     
@@ -809,9 +811,9 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
-        <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
-    
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
+    
+        <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
     
         <span class="sidebar-category-name" data-categories="像素画"><span class="iconfont-archer">&#xe60a;</span>像素画</span>
     
