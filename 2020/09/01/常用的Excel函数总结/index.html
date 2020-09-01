@@ -410,11 +410,11 @@ height:50vh;
 <p>使用格式：CONCATENATE(Text1，Text……) 　　</p>
 <p>参数说明：Text1、Text2……为需要连接的字符文本或引用的单元格。 　　</p>
 <p>应用举例：在C1单元格中输入公式：=CONCATENATE(A1,”@”,B1,”.com”)，确认后，即可将A1单元格中字符、@、B1单元格中的字符和.com连接成一个整体，显示在C1单元格中，如在A1输入 qianyin，B1输入 example ,那C1则输出显示 <a href="mailto:qianyin@example.com" target="_blank" rel="noopener">qianyin@example.com</a> 。　　</p>
-<p>特别提醒：如果参数不是引用的单元格，且为文本格式的，请给参数加上英文状态下的双引号，如果将上述公式改为：=A1&amp;”@”&amp;B1&amp;”.com”，也能达到相同的目的，“&amp;”更容易记住，大家可以多尝试。　</p>
+<p>特别提醒：如果参数不是引用的单元格，且为文本格式的，请给参数加上英文状态下的双引号，如果将上述公式改为：=A1&amp;”@”&amp;B1&amp;”.com”，也能达到相同的目的，“&amp;”更容易记住。　</p>
 <h3 id="AND函数"><a href="#AND函数" class="headerlink" title="AND函数 　　　"></a>AND函数 　　　</h3><p>主要功能：返回逻辑值：如果所有参数值均为逻辑“真（TRUE）”，则返回逻辑“真（TRUE）”，反之返回逻辑“假（FALSE）”。 　　</p>
 <p>使用格式：AND(logical1,logical2, …) 　　</p>
 <p>参数说明：Logical1,Logical2,Logical3……：表示待测试的条件值或表达式，最多这30个。 　　</p>
-<p>应用举例：在C1单元格输入公式：=AND(A5&gt;=60,B5&gt;=60)，确认。如果C5中返回TRUE，说明A5和B5中的数值均大于等于60，如果返回FALSE，说明A5和B5中的数值至少有一个小于60，是不是有点考试的考试，看看两科都及格的情况； 　　</p>
+<p>应用举例：在C1单元格输入公式：=AND(A5&gt;=60,B5&gt;=60)，确认。如果C5中返回TRUE，说明A5和B5中的数值均大于等于60，如果返回FALSE，说明A5和B5中的数值至少有一个小于60。 　　</p>
 <p>特别提醒：如果指定的逻辑条件参数中包含非逻辑值时，则函数返回错误值“#VALUE!”或“#NAME”。　</p>
 <h3 id="DATEDIF函数"><a href="#DATEDIF函数" class="headerlink" title="DATEDIF函数　　"></a>DATEDIF函数　　</h3><p>主要功能：计算返回两个日期参数的差值。　　</p>
 <p>使用格式：=DATEDIF(date1,date2,”y”)、=DATEDIF(date1,date2,”m”)、=DATEDIF(date1,date2,”d”)　　</p>
@@ -424,7 +424,7 @@ height:50vh;
 <h3 id="IF函数"><a href="#IF函数" class="headerlink" title="IF函数　　"></a>IF函数　　</h3><p>主要功能：根据对指定条件的逻辑判断的真假结果，返回相对应的内容。　　</p>
 <p>使用格式：=IF(Logical,Value_if_true,Value_if_false)　　</p>
 <p>参数说明：Logical代表逻辑判断表达式；Value_if_true表示当判断条件为逻辑“真（TRUE）”时的显示内容，如果忽略返回“TRUE”；Value_if_false表示当判断条件为逻辑“假（FALSE）”时的显示内容，如果忽略返回“FALSE”。　　</p>
-<p>应用举例：在C1单元格中输入公式：=IF(A1&gt;=18,”可以入内”,”禁此入内”)，确信以后，如果A1单元格中的数值大于或等于18，则C1单元格显示“可以入内”字样，反之显示“禁止入内”字样，是不是很有中国特色哈。　　</p>
+<p>应用举例：在C1单元格中输入公式：=IF(A1&gt;=18,”可以入内”,”禁此入内”)，确认后，如果A1单元格中的数值大于或等于18，则C1单元格显示“可以入内”字样，反之显示“禁止入内”字样。　　</p>
 <p>特别提醒：本文中类似“在C1单元格中输入公式”中指定的单元格，读者在使用时，并不需要受其约束，此处只是举例需要之用。　</p>
 <h3 id="COUNTIF函数"><a href="#COUNTIF函数" class="headerlink" title="COUNTIF函数 　　　　"></a>COUNTIF函数 　　　　</h3><p>主要功能：统计某个单元格区域中符合指定条件的单元格数目。 　　</p>
 <p>使用格式：COUNTIF(Range,Criteria) 　　</p>
@@ -434,12 +434,12 @@ height:50vh;
 <h3 id="SUMIF函数"><a href="#SUMIF函数" class="headerlink" title="SUMIF函数　　"></a>SUMIF函数　　</h3><p>主要功能：计算符合指定条件的单元格区域内的数值和。　　</p>
 <p>使用格式：SUMIF（Range,Criteria,Sum_Range）　　</p>
 <p>参数说明：Range代表条件判断的单元格区域；Criteria为指定条件表达式；Sum_Range代表需要计算的数值所在的单元格区域。　　</p>
-<p>应用举例：A列是学生姓名，B列是性别，C列是学生体重，在D1单元格中输入公式：=SUMIF(B:B,”男”,C:C)，确认后即可求出“男”生的体重之和，如果要计重平均体重，应该如何操作呢？　　</p>
+<p>应用举例：A列是学生姓名，B列是性别，C列是学生体重，在D1单元格中输入公式：=SUMIF(B:B,”男”,C:C)，确认后即可求出“男”生的体重之和。　</p>
 <p>特别提醒：如果需要根据多个条件求和时，请记得使用升级版函数 SUMIFS。　　</p>
 <h3 id="DCOUNT函数"><a href="#DCOUNT函数" class="headerlink" title="DCOUNT函数　　　"></a>DCOUNT函数　　　</h3><p>主要功能：返回数据库或列表的列中满足指定条件并且包含数字的单元格数目。　　</p>
 <p>使用格式：DCOUNT(database,field,criteria)　　</p>
 <p>参数说明：Database表示需要统计的单元格区域；Field表示函数所使用的数据列（在第一行必须要有标志项）；Criteria包含条件的单元格区域。　　</p>
-<p>应用举例：在F4单元格中输入公式：=DCOUNT(A1:D11,”语文”,F1:G2)，确认后即可求出“语文”列中，成绩大于等于70，而小于80的数值单元格数目（相当于分数段人数）。（引用百科）</p>
+<p>应用举例：在F4单元格中输入公式：=DCOUNT(A1:D11,”语文”,F1:G2)，确认后即可求出“语文”列中，成绩大于等于70，而小于80的数值单元格数目（相当于分数段人数）。</p>
 <h3 id="ISERROR函数"><a href="#ISERROR函数" class="headerlink" title="ISERROR函数　　　"></a>ISERROR函数　　　</h3><p>主要功能：用于测试函数式返回的数值是否有错。如果有错，该函数返回TRUE，反之返回FALSE。　　</p>
 <p>使用格式：ISERROR(value)　　</p>
 <p>参数说明：Value表示需要测试的值或表达式。　　</p>
@@ -458,7 +458,7 @@ height:50vh;
             <p>原文作者：<a href="https://qianyin-lee.github.io">千阴</a>
             <p>原文链接：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/</a>
             <p>发表日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:08:08 pm</a>
-            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 2nd 2020, 12:29:26 am</a>
+            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 2nd 2020, 12:41:55 am</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -758,15 +758,15 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="ARIMA模型"><span class="iconfont-archer">&#xe606;</span>ARIMA模型</span>
     
         <span class="sidebar-tag-name" data-tags="机器学习"><span class="iconfont-archer">&#xe606;</span>机器学习</span>
     
-        <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
     
         <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
+    
+        <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
     
         <span class="sidebar-tag-name" data-tags="Android"><span class="iconfont-archer">&#xe606;</span>Android</span>
     
@@ -811,9 +811,9 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
     
-        <span class="sidebar-category-name" data-categories="像素画"><span class="iconfont-archer">&#xe60a;</span>像素画</span>
-    
         <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
+    
+        <span class="sidebar-category-name" data-categories="像素画"><span class="iconfont-archer">&#xe60a;</span>像素画</span>
     
         <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
     
