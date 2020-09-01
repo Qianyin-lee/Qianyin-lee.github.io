@@ -401,51 +401,51 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h4 id="1-MID函数-left-right函数同理）"><a href="#1-MID函数-left-right函数同理）" class="headerlink" title="1.MID函数　(left right函数同理）　　　"></a>1.MID函数　(left right函数同理）　　　</h4><p>主要功能：从一个文本字符串的指定位置开始，截取指定数目的字符。　　</p>
+        <h3 id="MID函数-left-right函数同理）"><a href="#MID函数-left-right函数同理）" class="headerlink" title="MID函数　(left right函数同理）　　　"></a>MID函数　(left right函数同理）　　　</h3><p>主要功能：从一个文本字符串的指定位置开始，截取指定数目的字符。　　</p>
 <p>使用格式：MID(text,start_num,num_chars)　　</p>
 <p>参数说明：text代表一个文本字符串；start_num表示指定的起始位置；num_chars表示要截取的数目。　　</p>
 <p>应用举例：假定A47单元格中保存了“我喜欢星期日”的字符串，我们在C47单元格中输入公式：=MID(A47,4,3)，确认后即显示出“星期日”的字符。　　</p>
 <p>特别提醒：公式中各参数间，要用英文状态下的逗号“,”隔开。</p>
-<h4 id="2-CONCATENATE函数"><a href="#2-CONCATENATE函数" class="headerlink" title="2.CONCATENATE函数 　　　"></a>2.CONCATENATE函数 　　　</h4><p>主要功能：将多个字符文本或单元格中的数据连接在一起，显示在一个单元格中。 　　</p>
+<h3 id="CONCATENATE函数"><a href="#CONCATENATE函数" class="headerlink" title="CONCATENATE函数 　　　"></a>CONCATENATE函数 　　　</h3><p>主要功能：将多个字符文本或单元格中的数据连接在一起，显示在一个单元格中。 　　</p>
 <p>使用格式：CONCATENATE(Text1，Text……) 　　</p>
 <p>参数说明：Text1、Text2……为需要连接的字符文本或引用的单元格。 　　</p>
 <p>应用举例：在C1单元格中输入公式：=CONCATENATE(A1,”@”,B1,”.com”)，确认后，即可将A1单元格中字符、@、B1单元格中的字符和.com连接成一个整体，显示在C1单元格中，如在A1输入 qianyin，B1输入 example ,那C1则输出显示 <a href="mailto:qianyin@example.com" target="_blank" rel="noopener">qianyin@example.com</a> 。　　</p>
 <p>特别提醒：如果参数不是引用的单元格，且为文本格式的，请给参数加上英文状态下的双引号，如果将上述公式改为：=A1&amp;”@”&amp;B1&amp;”.com”，也能达到相同的目的，“&amp;”更容易记住，大家可以多尝试。　</p>
-<h4 id="3-AND函数"><a href="#3-AND函数" class="headerlink" title="3.AND函数 　　　"></a>3.AND函数 　　　</h4><p>主要功能：返回逻辑值：如果所有参数值均为逻辑“真（TRUE）”，则返回逻辑“真（TRUE）”，反之返回逻辑“假（FALSE）”。 　　</p>
+<h3 id="AND函数"><a href="#AND函数" class="headerlink" title="AND函数 　　　"></a>AND函数 　　　</h3><p>主要功能：返回逻辑值：如果所有参数值均为逻辑“真（TRUE）”，则返回逻辑“真（TRUE）”，反之返回逻辑“假（FALSE）”。 　　</p>
 <p>使用格式：AND(logical1,logical2, …) 　　</p>
 <p>参数说明：Logical1,Logical2,Logical3……：表示待测试的条件值或表达式，最多这30个。 　　</p>
 <p>应用举例：在C1单元格输入公式：=AND(A5&gt;=60,B5&gt;=60)，确认。如果C5中返回TRUE，说明A5和B5中的数值均大于等于60，如果返回FALSE，说明A5和B5中的数值至少有一个小于60，是不是有点考试的考试，看看两科都及格的情况； 　　</p>
 <p>特别提醒：如果指定的逻辑条件参数中包含非逻辑值时，则函数返回错误值“#VALUE!”或“#NAME”。　</p>
-<h4 id="4-函数名称：DATEDIF"><a href="#4-函数名称：DATEDIF" class="headerlink" title="4.函数名称：DATEDIF　　"></a>4.函数名称：DATEDIF　　</h4><p>主要功能：计算返回两个日期参数的差值。　　</p>
+<h3 id="DATEDIF函数"><a href="#DATEDIF函数" class="headerlink" title="DATEDIF函数　　"></a>DATEDIF函数　　</h3><p>主要功能：计算返回两个日期参数的差值。　　</p>
 <p>使用格式：=DATEDIF(date1,date2,”y”)、=DATEDIF(date1,date2,”m”)、=DATEDIF(date1,date2,”d”)　　</p>
 <p>参数说明：date1代表前面一个日期，date2代表后面一个日期；y（m、d）要求返回两个日期相差的年（月、天）数。　　</p>
 <p>应用举例：在C1单元格中输入公式：=DATEDIF(A1,TODAY(),”y”)，确认后返回系统当前日期[用TODAY()表示）与A1单元格中日期的差值，并返回相差的年数,如A1单元格输入 2016/3/1，那C1单元格则显示为1 ，记得today是写作这天。　　</p>
 <p>特别提醒：这是Excel中的一个隐藏函数，在函数向导中是找不到的，可以直接输入使用，对于计算年龄、工龄、生日提醒非常效，很适合HR，行政的同学们使用哈。　</p>
-<h4 id="5-IF函数"><a href="#5-IF函数" class="headerlink" title="5.IF函数　　"></a>5.IF函数　　</h4><p>主要功能：根据对指定条件的逻辑判断的真假结果，返回相对应的内容。　　</p>
+<h3 id="IF函数"><a href="#IF函数" class="headerlink" title="IF函数　　"></a>IF函数　　</h3><p>主要功能：根据对指定条件的逻辑判断的真假结果，返回相对应的内容。　　</p>
 <p>使用格式：=IF(Logical,Value_if_true,Value_if_false)　　</p>
 <p>参数说明：Logical代表逻辑判断表达式；Value_if_true表示当判断条件为逻辑“真（TRUE）”时的显示内容，如果忽略返回“TRUE”；Value_if_false表示当判断条件为逻辑“假（FALSE）”时的显示内容，如果忽略返回“FALSE”。　　</p>
 <p>应用举例：在C1单元格中输入公式：=IF(A1&gt;=18,”可以入内”,”禁此入内”)，确信以后，如果A1单元格中的数值大于或等于18，则C1单元格显示“可以入内”字样，反之显示“禁止入内”字样，是不是很有中国特色哈。　　</p>
 <p>特别提醒：本文中类似“在C1单元格中输入公式”中指定的单元格，读者在使用时，并不需要受其约束，此处只是举例需要之用。　</p>
-<h4 id="6-COUNTIF函数"><a href="#6-COUNTIF函数" class="headerlink" title="6.COUNTIF函数 　　　　"></a>6.COUNTIF函数 　　　　</h4><p>主要功能：统计某个单元格区域中符合指定条件的单元格数目。 　　</p>
+<h3 id="COUNTIF函数"><a href="#COUNTIF函数" class="headerlink" title="COUNTIF函数 　　　　"></a>COUNTIF函数 　　　　</h3><p>主要功能：统计某个单元格区域中符合指定条件的单元格数目。 　　</p>
 <p>使用格式：COUNTIF(Range,Criteria) 　　</p>
 <p>参数说明：Range代表要统计的单元格区域；Criteria表示指定的条件表达式。　　 　　</p>
 <p>应用举例：在C1单元格中输入公式：=COUNTIF(A1:B13,”&gt;=60”)，确认后，即可统计出A1至B13单元格区域中，数值大于等于60的单元格数目，适合各种场合。 　　</p>
 <p>特别提醒：允许引用的单元格区域中有空白单元格出现；如果需要根据多个条件计数时，请记得使用升级版函数 COUNTIFS。　</p>
-<h4 id="7-SUMIF函数"><a href="#7-SUMIF函数" class="headerlink" title="7.SUMIF函数　　"></a>7.SUMIF函数　　</h4><p>主要功能：计算符合指定条件的单元格区域内的数值和。　　</p>
+<h3 id="SUMIF函数"><a href="#SUMIF函数" class="headerlink" title="SUMIF函数　　"></a>SUMIF函数　　</h3><p>主要功能：计算符合指定条件的单元格区域内的数值和。　　</p>
 <p>使用格式：SUMIF（Range,Criteria,Sum_Range）　　</p>
 <p>参数说明：Range代表条件判断的单元格区域；Criteria为指定条件表达式；Sum_Range代表需要计算的数值所在的单元格区域。　　</p>
 <p>应用举例：A列是学生姓名，B列是性别，C列是学生体重，在D1单元格中输入公式：=SUMIF(B:B,”男”,C:C)，确认后即可求出“男”生的体重之和，如果要计重平均体重，应该如何操作呢？　　</p>
 <p>特别提醒：如果需要根据多个条件求和时，请记得使用升级版函数 SUMIFS。　　</p>
-<h4 id="8-DCOUNT函数"><a href="#8-DCOUNT函数" class="headerlink" title="8.DCOUNT函数　　　"></a>8.DCOUNT函数　　　</h4><p>主要功能：返回数据库或列表的列中满足指定条件并且包含数字的单元格数目。　　</p>
+<h3 id="DCOUNT函数"><a href="#DCOUNT函数" class="headerlink" title="DCOUNT函数　　　"></a>DCOUNT函数　　　</h3><p>主要功能：返回数据库或列表的列中满足指定条件并且包含数字的单元格数目。　　</p>
 <p>使用格式：DCOUNT(database,field,criteria)　　</p>
 <p>参数说明：Database表示需要统计的单元格区域；Field表示函数所使用的数据列（在第一行必须要有标志项）；Criteria包含条件的单元格区域。　　</p>
 <p>应用举例：在F4单元格中输入公式：=DCOUNT(A1:D11,”语文”,F1:G2)，确认后即可求出“语文”列中，成绩大于等于70，而小于80的数值单元格数目（相当于分数段人数）。（引用百科）</p>
-<h4 id="9-ISERROR函数"><a href="#9-ISERROR函数" class="headerlink" title="9.ISERROR函数　　　"></a>9.ISERROR函数　　　</h4><p>主要功能：用于测试函数式返回的数值是否有错。如果有错，该函数返回TRUE，反之返回FALSE。　　</p>
+<h3 id="ISERROR函数"><a href="#ISERROR函数" class="headerlink" title="ISERROR函数　　　"></a>ISERROR函数　　　</h3><p>主要功能：用于测试函数式返回的数值是否有错。如果有错，该函数返回TRUE，反之返回FALSE。　　</p>
 <p>使用格式：ISERROR(value)　　</p>
 <p>参数说明：Value表示需要测试的值或表达式。　　</p>
 <p>应用举例：输入公式：=ISERROR(A1/B1)，确认以后，如果B1单元格为空或“0”，则A1/B1出现错误，此时前述函数返回TRUE结果，反之返回FALSE。　　</p>
 <p>特别提醒：此函数通常与IF函数配套使用，如果将上述公式修改为：=IF(ISERROR(A1/B1),””,A1/B1)，如果B1为空或“0”，则相应的单元格显示为空，反之显示A1/B1 的值　；可以自行学习下 IFERROR，这也非常强大哈，界面美化的好伙伴。</p>
-<h4 id="10-VLOOKUP函数"><a href="#10-VLOOKUP函数" class="headerlink" title="10.VLOOKUP函数　　　　"></a>10.VLOOKUP函数　　　　</h4><p>主要功能：在数据表的首列查找指定的数值，并由此返回数据表当前行中指定列处的数值。　　</p>
+<h3 id="VLOOKUP函数"><a href="#VLOOKUP函数" class="headerlink" title="VLOOKUP函数　　　　"></a>VLOOKUP函数　　　　</h3><p>主要功能：在数据表的首列查找指定的数值，并由此返回数据表当前行中指定列处的数值。　　</p>
 <p>使用格式：VLOOKUP(lookup_value,table_array,col_index_num,range_lookup)　　</p>
 <p>参数说明：Lookup_value代表需要查找的数值；Table_array代表需要在其中查找数据的单元格区域；Col_index_num为在table_array区域中待返回的匹配值的列序号（当Col_index_num为2时,返回table_array第2列中的数值，为3时，返回第3列的值……）；Range_lookup为一逻辑值，如果为TRUE或省略，则返回近似匹配值，也就是说，如果找不到精确匹配值，则返回小于lookup_value的最大数值；如果为FALSE，则返回精确匹配值，如果找不到，则返回错误值#N/A。　　</p>
 <p>应用举例：表格中，A列，B列分别是学生姓名，手机号码；F列，G列分别是学生姓名，高考总分，现需要给高考成绩最好的几位同学电话沟通；那我们可以在C1单元格中输入公式：=VLOOKUP(A1,F:G,2,FALSE)，回车确认后，向下拖动公式进行填充，就可以在C列看到每位同学的高考成绩了，选出需要沟通的同学即可电话联系。　　</p>
@@ -458,7 +458,7 @@ height:50vh;
             <p>原文作者：<a href="https://qianyin-lee.github.io">千阴</a>
             <p>原文链接：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/</a>
             <p>发表日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:08:08 pm</a>
-            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:26:20 pm</a>
+            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/01/常用的Excel函数总结/">September 1st 2020, 11:38:33 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -601,7 +601,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-MID函数-left-right函数同理）"><span class="toc-number">1.</span> <span class="toc-text">1.MID函数　(left right函数同理）　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-CONCATENATE函数"><span class="toc-number">2.</span> <span class="toc-text">2.CONCATENATE函数 　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-AND函数"><span class="toc-number">3.</span> <span class="toc-text">3.AND函数 　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-函数名称：DATEDIF"><span class="toc-number">4.</span> <span class="toc-text">4.函数名称：DATEDIF　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-IF函数"><span class="toc-number">5.</span> <span class="toc-text">5.IF函数　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-COUNTIF函数"><span class="toc-number">6.</span> <span class="toc-text">6.COUNTIF函数 　　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-SUMIF函数"><span class="toc-number">7.</span> <span class="toc-text">7.SUMIF函数　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-DCOUNT函数"><span class="toc-number">8.</span> <span class="toc-text">8.DCOUNT函数　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-ISERROR函数"><span class="toc-number">9.</span> <span class="toc-text">9.ISERROR函数　　　</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-VLOOKUP函数"><span class="toc-number">10.</span> <span class="toc-text">10.VLOOKUP函数　　　　</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#MID函数-left-right函数同理）"><span class="toc-number">1.</span> <span class="toc-text">MID函数　(left right函数同理）　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#CONCATENATE函数"><span class="toc-number">2.</span> <span class="toc-text">CONCATENATE函数 　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AND函数"><span class="toc-number">3.</span> <span class="toc-text">AND函数 　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DATEDIF函数"><span class="toc-number">4.</span> <span class="toc-text">DATEDIF函数　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#IF函数"><span class="toc-number">5.</span> <span class="toc-text">IF函数　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#COUNTIF函数"><span class="toc-number">6.</span> <span class="toc-text">COUNTIF函数 　　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#SUMIF函数"><span class="toc-number">7.</span> <span class="toc-text">SUMIF函数　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DCOUNT函数"><span class="toc-number">8.</span> <span class="toc-text">DCOUNT函数　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ISERROR函数"><span class="toc-number">9.</span> <span class="toc-text">ISERROR函数　　　</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#VLOOKUP函数"><span class="toc-number">10.</span> <span class="toc-text">VLOOKUP函数　　　　</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -758,21 +758,21 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
         <span class="sidebar-tag-name" data-tags="ARIMA模型"><span class="iconfont-archer">&#xe606;</span>ARIMA模型</span>
     
         <span class="sidebar-tag-name" data-tags="机器学习"><span class="iconfont-archer">&#xe606;</span>机器学习</span>
     
-        <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
-    
         <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
     
-        <span class="sidebar-tag-name" data-tags="科学上网"><span class="iconfont-archer">&#xe606;</span>科学上网</span>
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
     
         <span class="sidebar-tag-name" data-tags="Android"><span class="iconfont-archer">&#xe606;</span>Android</span>
     
         <span class="sidebar-tag-name" data-tags="json"><span class="iconfont-archer">&#xe606;</span>json</span>
+    
+        <span class="sidebar-tag-name" data-tags="科学上网"><span class="iconfont-archer">&#xe606;</span>科学上网</span>
     
         <span class="sidebar-tag-name" data-tags="Excel"><span class="iconfont-archer">&#xe606;</span>Excel</span>
     
@@ -809,15 +809,15 @@ jsonContent:
         <div class="sidebar-panel-categories">
     <div class="sidebar-categories-name">
     
+        <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
+    
         <span class="sidebar-category-name" data-categories="hexo"><span class="iconfont-archer">&#xe60a;</span>hexo</span>
     
         <span class="sidebar-category-name" data-categories="像素画"><span class="iconfont-archer">&#xe60a;</span>像素画</span>
     
-        <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
+        <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
     
         <span class="sidebar-category-name" data-categories="科学上网"><span class="iconfont-archer">&#xe60a;</span>科学上网</span>
-    
-        <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
     
         <span class="sidebar-category-name" data-categories="Excel"><span class="iconfont-archer">&#xe60a;</span>Excel</span>
     
