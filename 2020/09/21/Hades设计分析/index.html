@@ -272,7 +272,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">523</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">1.3k</span>阅读时长: <span class="post-count reading-time">4 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -404,8 +404,21 @@ height:50vh;
         <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>《Hades》于9月18号结束EA阶段正式发布1.0版本，笔者趁此机会爆肝体验了一番，以此文记录一些设计分析笔记。</p>
 <p><strong>Supergiant Games</strong>之前的作品《晶体管》给我本人留下了深刻的印象，这一次，《Hades》同样拥有独特风格的出众的美术音乐，而其游戏设计具体如何？请看以下解析。</p>
 <h1 id="正文"><a href="#正文" class="headerlink" title="正文"></a>正文</h1><h2 id="机制与叙事的完美结合"><a href="#机制与叙事的完美结合" class="headerlink" title="机制与叙事的完美结合"></a>机制与叙事的完美结合</h2><p>一般的Rogue游戏基本都是给玩家一个架空的世界观和一个final boss就开始让玩家进行一局局游戏，而《Hades》却不一样，其拥有<strong>令人信服</strong>的设定和<strong>丰富</strong>的剧情。</p>
-<p>《Hades》的故事基于希腊神话改编，在游戏中玩家扮演冥界王子扎格列欧斯，小hades死后能在冥府重生，这与Rogue游戏的deathloop机制相呼应，使得游戏内的一次次死亡重生变成了顺理成章的事，而不是像其他大多数Rogue游戏一样只是简单解释成挑战失败。除此之外，游戏的随机天赋系统被设定成扎格列欧斯在逃离冥界的路上接受的诸神庇佑，这些神明是王子的亲戚，他们希望扎格列欧斯能逃离冥界登上奥林匹斯山，因此他们在游戏中的帮助加成也是理所当然的事情。这类设定使得《Hades》的机制可以用“自洽”来形容，提升了玩家的代入感。</p>
+<p>《Hades》的故事基于希腊神话改编，在游戏中玩家扮演冥界王子扎格列欧斯，小hades死后能在冥府重生，这与Rogue游戏的deathloop机制相呼应，使得游戏内的一次次死亡重生变成了顺理成章的事，而不是像其他大多数Rogue游戏一样只是简单解释成挑战失败重新挑战。除此之外，游戏的随机天赋系统被设定成扎格列欧斯在逃离冥界的路上接受的诸神庇佑，这些神明是王子的亲戚，他们希望扎格列欧斯能逃离冥界登上奥林匹斯山，因此他们在游戏中的帮助加成也是理所当然的事情。这类设定使得《Hades》的Roguelite机制可以用“自洽”来形容，提升了玩家的代入感。</p>
 <p>《Hades》以针对机制的叙事手段展示了充实的内容。每一次死亡重生，玩家都能接触到新的剧情和完全不重复的对话，给玩家带来了不小的惊喜，游戏还拥有人物养成系统，玩家可通过游戏进程不断加深与NPC的关系，这使得游戏内容十分丰富，在给重度玩家提供长期趣味的同时吸引了许多对Rogue不感冒但喜欢剧情和养成的玩家入坑。</p>
+<h2 id="针对游戏类型问题的解决方案"><a href="#针对游戏类型问题的解决方案" class="headerlink" title="针对游戏类型问题的解决方案"></a>针对游戏类型问题的解决方案</h2><p>《Hades》属于快节奏俯视角动作Roguelite游戏（虽然官方自称是Roguelike），这类游戏在设计过程中可能出现一些问题，设计师针对其中的几个问题提出对应的解决方案，具体如下：</p>
+<ul>
+<li><p><strong>问题一</strong>：动作很难有更多的拓展，技能之间的衔接空间较少，使得战斗中的规划感下降。</p>
+<p><strong>解决方案</strong>：游戏内加入了反弹、背刺、击退撞墙和地形杀（陷阱、岩浆和石块掉落）的伤害设定，使玩家可进行多种特殊操作。</p>
+</li>
+<li><p><strong>问题二</strong>：在某些房间敌人数量较多游戏画面混乱，主角与敌人、弹幕、陷阱及其他场景元素夹杂在一起，这使得玩家在冲刺闪避的时候很容易碰到陷阱，造成不开心的游戏体验。</p>
+<p><strong>解决方案</strong>：游戏中大部分敌人攻击方式清晰且手段较少，没有纯恶心人的堆叠数量密集攻击，此外敌人的远程弹幕可被攻击或反弹。</p>
+</li>
+<li><p><strong>问题三</strong>：Rogue游戏常见的<strong>版本答案</strong>问题，所谓的版本答案在Rogue游戏中就是当前版本最优的固定套路，比如高伤害远程攻击+快速位移的组合，很容易让战斗变得无脑，使玩家不再需要思考和技巧。</p>
+<p><strong>解决方案</strong>：首先是对游戏中无脑套路的限制针对，比如游戏中的盾牌是一个非常好用的武器，我本人首次通关便是用的盾牌，它的特殊攻击是将盾牌投掷出去弹射攻击敌人并自动返回，所以便产生了一种套路，盾牌配合提升特殊攻击伤害的天赋再加上雅典娜的冲刺反弹天赋，使得游戏的前两大关玩家只需要不停用特殊攻击——冲刺这样两个按键的组合便可无脑过关，但到了第三大关，游戏内出现了持盾的小怪和boss，他们会格挡玩家的特殊攻击，使得特殊攻击的伤害天赋收益大幅度降低，这样的敌人设计让玩家开始思考如何绕后攻击敌人，并学习使用持盾格挡和冲撞的技巧。</p>
+<p>然后游戏还加入了一些<a href="https://mp.weixin.qq.com/s/0aRWLOGF9NJ7jjYS682IXQ" target="_blank" rel="noopener">刻意设计</a>的挑战，如弓箭武器的最优攻击时间窗口，需要被回收的投弹技能，投弹技能的设计意图可能是一方面想与武器的攻击进行组合最大化输出，另一方面是想鼓励那些用套路站桩输出的玩家进行移动，改变一成不变的战斗节奏（但游戏内其他攻击后摇很短，投弹攻击基本会降低dps，使用率不高）。</p>
+</li>
+</ul>
 
     </article>
     <!-- license  -->
@@ -414,7 +427,7 @@ height:50vh;
             <p>原文作者：<a href="https://qianyin-lee.github.io">千阴</a>
             <p>原文链接：<a href="https://qianyin-lee.github.io/2020/09/21/Hades设计分析/">https://qianyin-lee.github.io/2020/09/21/Hades设计分析/</a>
             <p>发表日期：<a href="https://qianyin-lee.github.io/2020/09/21/Hades设计分析/">September 21st 2020, 1:30:03 pm</a>
-            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/21/Hades设计分析/">September 24th 2020, 12:35:47 am</a>
+            <p>更新日期：<a href="https://qianyin-lee.github.io/2020/09/21/Hades设计分析/">September 24th 2020, 5:24:33 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -557,7 +570,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#机制与叙事的完美结合"><span class="toc-number">2.1.</span> <span class="toc-text">机制与叙事的完美结合</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#前言"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#正文"><span class="toc-number">2.</span> <span class="toc-text">正文</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#机制与叙事的完美结合"><span class="toc-number">2.1.</span> <span class="toc-text">机制与叙事的完美结合</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#针对游戏类型问题的解决方案"><span class="toc-number">2.2.</span> <span class="toc-text">针对游戏类型问题的解决方案</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
@@ -570,8 +583,6 @@ top:50vh;
     <div class="sidebar-content sidebar-content-show-archive">
           <div class="sidebar-panel-archives">
     <!-- 在ejs中将archive按照时间排序 -->
-    
-    
     
     
     
@@ -768,21 +779,21 @@ top:50vh;
     
         <span class="sidebar-tag-name" data-tags="游戏设计"><span class="iconfont-archer">&#xe606;</span>游戏设计</span>
     
+        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
+    
         <span class="sidebar-tag-name" data-tags="ARIMA模型"><span class="iconfont-archer">&#xe606;</span>ARIMA模型</span>
     
         <span class="sidebar-tag-name" data-tags="机器学习"><span class="iconfont-archer">&#xe606;</span>机器学习</span>
     
-        <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
-    
-        <span class="sidebar-tag-name" data-tags="Unity"><span class="iconfont-archer">&#xe606;</span>Unity</span>
+        <span class="sidebar-tag-name" data-tags="Excel"><span class="iconfont-archer">&#xe606;</span>Excel</span>
     
         <span class="sidebar-tag-name" data-tags="像素画"><span class="iconfont-archer">&#xe606;</span>像素画</span>
     
         <span class="sidebar-tag-name" data-tags="Android"><span class="iconfont-archer">&#xe606;</span>Android</span>
     
         <span class="sidebar-tag-name" data-tags="json"><span class="iconfont-archer">&#xe606;</span>json</span>
-    
-        <span class="sidebar-tag-name" data-tags="Excel"><span class="iconfont-archer">&#xe606;</span>Excel</span>
     
         <span class="sidebar-tag-name" data-tags="科学上网"><span class="iconfont-archer">&#xe606;</span>科学上网</span>
     
@@ -825,11 +836,11 @@ jsonContent:
     
         <span class="sidebar-category-name" data-categories="Unity"><span class="iconfont-archer">&#xe60a;</span>Unity</span>
     
+        <span class="sidebar-category-name" data-categories="Excel"><span class="iconfont-archer">&#xe60a;</span>Excel</span>
+    
         <span class="sidebar-category-name" data-categories="像素画"><span class="iconfont-archer">&#xe60a;</span>像素画</span>
     
         <span class="sidebar-category-name" data-categories="Android"><span class="iconfont-archer">&#xe60a;</span>Android</span>
-    
-        <span class="sidebar-category-name" data-categories="Excel"><span class="iconfont-archer">&#xe60a;</span>Excel</span>
     
         <span class="sidebar-category-name" data-categories="科学上网"><span class="iconfont-archer">&#xe60a;</span>科学上网</span>
     
