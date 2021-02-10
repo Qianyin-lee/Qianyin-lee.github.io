@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ARIMA模型学习笔记 · Redpanda Studio</title>
+    <title>GMTK笔记——优秀的近战系统 · Redpanda Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/" >Redpanda Studio</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">ARIMA模型学习笔记</a>
+                <a href="#" class="post-name">GMTK笔记——优秀的近战系统</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            ARIMA模型学习笔记
+            GMTK笔记——优秀的近战系统
             <!-- 404 -->
             
         </h1>
@@ -266,20 +266,18 @@ height:50vh;
                 
                     <div class= post-intro-tags >
     
-        <a class="post-tag" href="javascript:void(0);" data-tags = "ARIMA模型">ARIMA模型</a>
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags = "机器学习">机器学习</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags = "游戏设计">游戏设计</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">598</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">2.1k</span>阅读时长: <span class="post-count reading-time">7 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/07/03</span>
+                    <span class="post-intro-time">2021/02/10</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -403,75 +401,65 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="模型概念"><a href="#模型概念" class="headerlink" title="模型概念"></a>模型概念</h2><h3 id="1-AR（自回归模型）"><a href="#1-AR（自回归模型）" class="headerlink" title="1. AR（自回归模型）"></a>1. AR（自回归模型）</h3><ul>
-<li>特点：描述当前值与历史值之间的关系</li>
-<li>功能：用变量自身的历史时间数据对自身进行预测</li>
-<li>参数：<strong>p</strong>（时序数据本身的滞后数）</li>
-</ul>
-<h3 id="2-I-差分"><a href="#2-I-差分" class="headerlink" title="2. I (差分)"></a>2. I (差分)</h3><ul>
-<li>特点：使用拆分法计算时间序列差值</li>
-<li>功能：使数据更平稳以满足模型对平稳性的要求</li>
-<li>参数：<strong>d</strong>（差分阶数）</li>
-</ul>
-<h3 id="3-MA-移动平均模型"><a href="#3-MA-移动平均模型" class="headerlink" title="3. MA  (移动平均模型)"></a>3. MA  (移动平均模型)</h3><ul>
-<li>特点：关注AR模型中误差项的累加</li>
-<li>功能：有效消除预测中的随机波动</li>
-<li>参数：<strong>q</strong>（预测误差的滞后数）</li>
-</ul>
-<h2 id="建模重点"><a href="#建模重点" class="headerlink" title="建模重点"></a>建模重点</h2><h3 id="1-利用差分得到平稳数据（参数d的确定）"><a href="#1-利用差分得到平稳数据（参数d的确定）" class="headerlink" title="1.利用差分得到平稳数据（参数d的确定）"></a>1.利用差分得到平稳数据（参数<strong>d</strong>的确定）</h3><p>观察比较差分图的稳定性，选择平稳性最强的图的阶数作为参数<strong>d</strong>。</p>
-<h3 id="2-参数p-q的确定"><a href="#2-参数p-q的确定" class="headerlink" title="2.参数p, q的确定"></a>2.参数<strong>p, q</strong>的确定</h3><p>参照下表</p>
-<table>
-<thead>
-<tr>
-<th align="center">模型</th>
-<th align="center">ACF(自相关函数)</th>
-<th align="center">PACF（偏自相关函数）</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center">AR</td>
-<td align="center">拖尾</td>
-<td align="center"><strong>p</strong>阶后截尾</td>
-</tr>
-<tr>
-<td align="center">MA</td>
-<td align="center"><strong>q</strong>阶后截尾</td>
-<td align="center">拖尾</td>
-</tr>
-</tbody></table>
-<ul>
-<li>拖尾：序列衰减趋于0</li>
-<li>截尾：序列从某个时点变得非常小，之后几乎95%的(偏)自相关系数都落在2倍标准差范围以内</li>
-</ul>
-<h2 id="建模步骤"><a href="#建模步骤" class="headerlink" title="建模步骤"></a>建模步骤</h2><ol>
-<li>对数据绘图，观测是否为平稳时间序列，对于非平稳时间序列要先进行d阶差分运算，化为平稳时间序列，确定参数<strong>d</strong>。</li>
-<li>要对平稳时间序列分别求得其自相关系数ACF 和偏自相关系数PACF，通过对自相关图和偏自相关图的分析，确定参数<strong>p, q</strong>。</li>
-<li>由确定的<strong>d, p, q</strong>参数得到ARIMA模型。</li>
-</ol>
-<h2 id="模型选择"><a href="#模型选择" class="headerlink" title="模型选择"></a>模型选择</h2><p>通过截尾和拖尾确定模型的<strong>p</strong>和<strong>q</strong>参数具有一定的主观性，因此为了得到较优模型，我们需要使用信息准则函数法进行相应的计算比对来选择适合的参数。</p>
-<p>通常使用的两种准则：</p>
-<p><strong>1.AIC</strong>（赤池信息准则） </p>
-<p>𝐴𝐼𝐶 = 2𝑘 − 2ln(𝐿)</p>
-<p><strong>2.BIC</strong>  (贝叶斯信息准则)</p>
-<p>𝐵𝐼𝐶 = 𝑘𝑙𝑛(𝑛) − 2ln(𝐿)</p>
-<ul>
-<li>k为模型参数个数，n为样本数量，L为似然函数</li>
-</ul>
-<p>信息准则函数得到的结果越小越好，由此来选择模型。</p>
-<h2 id="模型检验"><a href="#模型检验" class="headerlink" title="模型检验"></a>模型检验</h2><p><strong>检验残差序列的稳定性</strong></p>
+        <p>本文记录自<a href="https://www.bilibili.com/video/BV1Fp411d7qM并结合笔者个人的部分游戏经历进行分析。" target="_blank" rel="noopener">https://www.bilibili.com/video/BV1Fp411d7qM并结合笔者个人的部分游戏经历进行分析。</a></p>
+<p>游戏设计师应该创造令人兴奋而富有攻防转换的动态战斗体验。</p>
+<h3 id="攻击（attacking）"><a href="#攻击（attacking）" class="headerlink" title="攻击（attacking）"></a>攻击（attacking）</h3><ul>
+<li><p>每个角色（武器）都应当有自己象征性的<strong>攻击动作</strong>（special move）：</p>
+<p>当讨论这个话题时，应当先知道一个概念——动画帧数，在一个攻击动作中，我们分为三个时间段：</p>
 <ol>
-<li>ARIMA模型的残差是否是平均值为0且方差为常数的正态分布。</li>
-<li>绘制QQ图，若呈现线性即正态分布。</li>
+<li><strong>前摇</strong>（anticipation）——相当于攻击前的蓄力</li>
+<li><strong>击中</strong>（contact）——表示攻击成功产生伤害</li>
+<li><strong>后摇</strong>（recovery）——角色恢复到自然状态</li>
 </ol>
+<p>一般用前摇体现攻击速度，在前摇中，敌人可以躲避，格挡，甚至可以在你之前击中你。不过有的设计中，会加入<strong>动作取消</strong>（animation cancel）的设计，意味着你可以通过新动作来取消正在进行的攻击。例如在猎天使魔女中，你可以随时用闪避来改变你的动作，使操作更加随心所欲，而魂系游戏不存在动画取消的设计，调高了游戏的策略感。不过，加入动作取消并不会降低游戏的难度，敌人可能更具侵略性。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>攻击范围</strong>：</p>
+<p>更多的指的是你锁定敌人的距离而不是你的攻击距离，举一个有代表性的例子——蝙蝠侠，虽然韦恩只有拳头，但是在游玩的时候你可以看到蝙蝠侠飞来飞去，在各个敌人之间周旋，给玩家从容不破的感觉。而我最爱的血源，在攻击的时候不会自动锁定怪物（或是像怪物方向偏移攻击动作），这个对于玩家的水平要求更高了——你必须了解你的攻击范围的尺寸大小，以及要求你的站位。不过对于快节奏游戏来说，一些辅助偏移有助于提升玩家的手感。</p>
+<p>还有一种更有深度的设计，攻击伤害跟距离有关，例如任天堂大乱斗的MARS，剑尖的伤害大于剑身。</p>
+</li>
+</ul>
+<ul>
+<li><p><strong>连招</strong></p>
+<p>指的是按照预订好的顺序按键。</p>
+<p>手游可采用技能链的设计。</p>
+</li>
+</ul>
+<h3 id="防御（defending）"><a href="#防御（defending）" class="headerlink" title="防御（defending）"></a>防御（defending）</h3><ul>
+<li><p><strong>格挡（block）和闪避（dodge）</strong></p>
+<p>跟攻击设计类似，防御选项也应用于不同情况。需要玩家对当前的危机做出相应的动作才能化险为夷。来看看黑魂，你可以很容易的使用格挡，通常能够防御大部分攻击，怪物猎人也是如此，不过很快的，你会被怪物耗尽体力从而被破防，因为设计师并不希望玩家躲在安全的，毫无威胁的地方看戏。至于闪避，通常带有无敌帧，能够躲避所有伤害，但是对躲避时机提出了要求，同时也会消耗体力，改变你的站位，甚至在血源中，加入的躲避破绽的设定——无敌帧结束之后会受到更大的伤害（目的是减少玩家的容错率，增加玩家的行动代价）。</p>
+</li>
+<li><p><strong>弹反</strong></p>
+<p>敌人在击中玩家的一瞬间时，玩家要做出瞬间反应。这种设计通常出现在较有深度的战斗系统中，施展成功的时候会带给玩家强烈的成就感和爽快感，但是对于玩家的时机把握跟动作熟悉程度都有跟高的要求。</p>
+<p>不过，也有用力过头的例子，让弹反变成一个收益太高的行动时，可能会让游戏变成等待时刻，在早期的刺客信条中，只要弹反成功就能够秒杀敌人，让战斗变成了瞬间且无聊的事情。那么如何解决玩家利用弹反来使得战斗变得无聊呢？</p>
+<ol>
+<li>首先，减少触发帧数，反例就是蝙蝠侠，只要敌人头上出现闪电就能弹反，提示非常的简单，玩家不需要观察动作，只要看到提示按键就行了，这跟把“快按弹反”四个字打在敌人的头上没啥区别（很无趣的战斗）。</li>
+<li>第二，增加弹反失败的惩罚。比如在塞尔达野吹或是怪猎，弹反失败会拥有一个硬直，还有血源的破绽伤害。</li>
+<li>第三，限制玩家的弹反次数，像是在血源中，玩家的水银子弹有限，有限且重要的资源往往会让玩家产生抉择，并体会到因此带来的爽快感或者懊悔感。</li>
+<li>第四，减少弹反收益，比如弹反成功进入子弹时间或使敌人眩晕等等。</li>
+</ol>
+<p>以上的这些都是避免玩家过度使用防御模块。当然我们也可以通过鼓励进攻来让玩家专注于攻击，比如攻击敌人的破绽可以收益硬直（血源里的削韧），或者怪物猎人的部位破坏等等。</p>
+</li>
+</ul>
+<h3 id="敌人设计（enemy-design）"><a href="#敌人设计（enemy-design）" class="headerlink" title="敌人设计（enemy design）"></a>敌人设计（enemy design）</h3><p>一个合格的敌人需要同时考验玩家的攻击能力和防御能力，教会玩家战斗技巧。</p>
+<p>不只是单独的boss战斗，在与多个敌人的战斗中，玩家也需要思考先解决什么类型的敌人，例如治疗者，弓箭手等，这提现了交互中的策略部分，当然设计师也要把功能展现的浅显可见，例如敌人的颜色，技能特效（绿色代表加血回血的敌人），不能让玩家感到迷惑。</p>
+<p>另外，对于敌人的前摇动作强调非常重要，提示了玩家敌人的技能，同时玩家要及时思考应对，比如猎天使魔女，特效，音效等。再者，boss的可以加入“免疫玩家某些特定的能力”的能力，例如免疫玩家的弹反，这样设计的好处是，就算是同样的boss，玩家会因为不能弹反某些动作，进而去思考其他的战斗思路。有趣多样化的敌人是使得玩家用上所有技巧的最主要的方法，让玩家无法依赖某种特定的打法或是连招。</p>
+<p>还有一些方法，能够鼓励玩家使用不同的战术。例如使用高难度的帅气动作，比如血源里千阴的入鞘拔刀居合斩，高风险高收益，或是连击数到达某些数值有伤害倍数，或是异度2中高伤害增加稀有物掉落率，或者简单直接，我加入一个评分系统，比如DMC的评分。</p>
+<p>更加好的一些设计，则是让游戏中的敌人动态变化，精准打击玩家的强项。比如合金装备5中，玩家要是经常使用狙击枪，那么敌人都带上了头盔，要是经常使用毒气弹，敌人就都会带上面罩，如此设计让玩家使用不同的战术。</p>
+<h3 id="打击感"><a href="#打击感" class="headerlink" title="打击感"></a>打击感</h3><p>那么，做到了这三项就足够了吗？或许不是，在游戏中，还有一项元素深深的影响着战斗系统，就是“打击感”。</p>
+<img src="/2021/02/10/GMTK笔记——优秀的近战系统/v2-f27946e643e1f3fb96bfd51eabf31409_r.jpg" alt="v2-f27946e643e1f3fb96bfd51eabf31409_r" style="zoom:67%;">
+
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>那么，一套优秀的动作战斗系统需要什么呢？其实，一款战斗游戏的核心在于“决策”。关于你要攻击谁，如何攻击，什么时候攻击，如何应对敌人等。在一些游戏中，你要深思熟虑，一招一式，另一些游戏中，要在电光火石中行动。或许在你可以乱按攻击键，乱拳打死老师傅，但是评分系统和<strong>刻意设计</strong>会使你对自己有所要求，鼓励你不断进步。玩家需要权衡做出的每个行动。对于每个镜头的画面，从行云流水的大场面，到一对一的刺激对决。是否要自动偏正，要不要“动作取消”，还有对于“弹反”的设计。还有一个重点是，游戏玩起来要“感觉很对”，这对于打击感的设计必不可少。做完了以上的事情后，还需要让游戏的战斗有一些创新之处，这样，一个完善的战斗系统就完成了。</p>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://qianyin-lee.github.io">千阴</a>
-            <p>原文链接：<a href="https://qianyin-lee.github.io/2019/07/03/ARIMA模型学习笔记/">https://qianyin-lee.github.io/2019/07/03/ARIMA模型学习笔记/</a>
-            <p>发表日期：<a href="https://qianyin-lee.github.io/2019/07/03/ARIMA模型学习笔记/">July 3rd 2019, 11:32:26 pm</a>
-            <p>更新日期：<a href="https://qianyin-lee.github.io/2019/07/03/ARIMA模型学习笔记/">July 4th 2019, 10:47:31 am</a>
+            <p>原文链接：<a href="https://qianyin-lee.github.io/2021/02/10/GMTK笔记——优秀的近战系统/">https://qianyin-lee.github.io/2021/02/10/GMTK笔记——优秀的近战系统/</a>
+            <p>发表日期：<a href="https://qianyin-lee.github.io/2021/02/10/GMTK笔记——优秀的近战系统/">February 10th 2021, 4:54:04 pm</a>
+            <p>更新日期：<a href="https://qianyin-lee.github.io/2021/02/10/GMTK笔记——优秀的近战系统/">February 10th 2021, 5:02:53 pm</a>
             <p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -479,17 +467,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href= "/2019/11/14/安卓开发时遇到的问题和解决方案/" title= "安卓开发时遇到的问题和解决方案">
-                    <div class="nextTitle">安卓开发时遇到的问题和解决方案</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href= "/2019/06/30/hexo博客搭建遇到的问题和解决方案（持续更新）/" title= "hexo博客搭建遇到的问题和解决方案（持续更新）">
-                    <div class="prevTitle">hexo博客搭建遇到的问题和解决方案（持续更新）</div>
+                <a href= "/2020/09/28/战棋游戏如何加入Rogue模式？（相关游戏设计简评）/" title= "Rogue战棋游戏设计分析">
+                    <div class="prevTitle">Rogue战棋游戏设计分析</div>
                 </a>
             
         </li>
@@ -619,7 +602,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#模型概念"><span class="toc-number">1.</span> <span class="toc-text">模型概念</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-AR（自回归模型）"><span class="toc-number">1.1.</span> <span class="toc-text">1. AR（自回归模型）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-I-差分"><span class="toc-number">1.2.</span> <span class="toc-text">2. I (差分)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-MA-移动平均模型"><span class="toc-number">1.3.</span> <span class="toc-text">3. MA  (移动平均模型)</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建模重点"><span class="toc-number">2.</span> <span class="toc-text">建模重点</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-利用差分得到平稳数据（参数d的确定）"><span class="toc-number">2.1.</span> <span class="toc-text">1.利用差分得到平稳数据（参数d的确定）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-参数p-q的确定"><span class="toc-number">2.2.</span> <span class="toc-text">2.参数p, q的确定</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#建模步骤"><span class="toc-number">3.</span> <span class="toc-text">建模步骤</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型选择"><span class="toc-number">4.</span> <span class="toc-text">模型选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模型检验"><span class="toc-number">5.</span> <span class="toc-text">模型检验</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#攻击（attacking）"><span class="toc-number">1.</span> <span class="toc-text">攻击（attacking）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#防御（defending）"><span class="toc-number">2.</span> <span class="toc-text">防御（defending）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#敌人设计（enemy-design）"><span class="toc-number">3.</span> <span class="toc-text">敌人设计（enemy design）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#打击感"><span class="toc-number">4.</span> <span class="toc-text">打击感</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#总结"><span class="toc-number">5.</span> <span class="toc-text">总结</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
